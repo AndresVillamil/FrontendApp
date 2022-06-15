@@ -1,0 +1,61 @@
+<div class="container">
+ <form [formGroup]="fgValidador" (ngSubmit)="IdentificaUsuario()" > <!-- Change The Form Method From Here-->
+    <div class="card-panel z-depth-5">
+
+        <!-- Form Logo Section  -->
+
+        <div class="row margin">
+            <div class="col s12 m12 l12 center">
+                <img src="https://i.imgur.com/ypAbAYt.png"
+                 alt="" class="responsive-img circle" style="width:100px;">
+                <p>Inicio de Sesión en APP-TIENDA</p>
+            </div>
+        </div>
+
+        <!-- Form Username Input Section -->
+
+        <div class="col s12 m12 l12">
+            <div class="input-field">
+                <i class="material-icons prefix">person</i>
+                <input formControlName = 'usuario' type="text" name="username" id="username" class="validate" required>
+                <label for="username">Usuario</label>
+            </div>
+        </div>
+
+        <!-- Form Password Input Section -->
+
+        <div class="col m12 l12">
+            <div class="input-field">
+                <i class="material-icons prefix">lock</i>
+                <input formControlName = 'clave' type="password" name="password" id="password" class="validate" required>
+                <label for="password">Contraseña</label>
+            </div>
+          </div>    
+
+          <!-- ReCaptcha  -->
+            <br>
+            <form [formGroup]="fgValidador">
+                <ngx-recaptcha2 #captchaElem
+                [siteKey]="siteKey"
+                formControlName="recaptcha">
+                </ngx-recaptcha2>
+            </form>
+            <br>
+
+            <!-- Form Button Section  -->
+
+        <div class="center">
+            <input [disabled]="!fgValidador.valid" type="submit" value="Ingresar" name="login" 
+            class="btn waves-effect waves-light " 
+            style="width:100%; background-color: #ff4081;">
+        </div>
+
+            <!-- Form "Register Now" And "Forgot Password" Link Section. -->
+
+        <div class="" style="font-size:14px;"><br>
+            <a routerLink="/seguridad/registrarusuario" class="left">Registese Ahora!</a>
+            <a routerLink="/seguridad/recuperarclave" class="right ">Olvidó la Contraseña?</a>
+        </div><br>
+    </div>
+</form>
+</div>

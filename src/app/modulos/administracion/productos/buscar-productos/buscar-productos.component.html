@@ -1,0 +1,33 @@
+
+<div class="container">
+ 
+<br>
+<a routerLink="/administracion/crearproductos" class="btn light-green darken-2">Nuevo Producto</a>
+<table class="table responsive">
+<thead>
+  <tr>
+    <th>NOMBRE</th>
+    <th>DESCRIPCION</th>
+    <th>IMAGEN</th>
+    <th>PRECIO</th>
+    <th>EXISTENCIA</th>
+    <th>CATEGORIA</th>
+    <th>EDICION</th>
+    <th>ELIMINACION</th>
+  </tr>
+</thead>
+<tbody>
+  <tr *ngFor ="let p of listadoRegistros">
+    <td>{{p.nombreProducto}}</td>
+    <td>{{p.descripcionProducto}}</td>
+    <td><img src="{{p.imagen}}" class="imagenproducto"/></td>
+    <td>{{p.precio}}</td>
+    <td>{{p.existencia}}</td>
+    <td>{{p.idCategoria}}</td>
+    <td><a routerLink="/administracion/editarproductos/{{p.id}}" class="btn btn-primary">Editar</a></td>
+    <td><a routerLink="/administracion/eliminarproductos/{{p.id}}" class="btn red lighten-1">Eliminar</a></td>
+  </tr>
+</tbody>
+
+</table>
+</div>

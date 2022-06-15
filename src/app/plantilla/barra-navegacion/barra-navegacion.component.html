@@ -1,0 +1,37 @@
+<!-- Barra de menú -->
+<nav>
+  <div class="nav-wrapper">
+    <ul class="left hide-on-med-and-down">
+      <li><a><img
+            src="https://i.fbcd.co/products/original/59467589f8a35fd6b026fad71a8dd3252b40a86ab0e93fb96590e57d23d4aa11.jpg"
+            alt="" style="width: 35px"><strong style="color: darkmagenta" routerLink="/inicio"> OnLineStore</strong></a>
+      </li>
+      <li><a routerLink="/inicio">Inicio</a></li>
+      <li><a routerLink="/cliente/catalogo/verproductos">Tienda</a></li>
+      <li *ngIf = "sesionIniciada"><a routerLink="/asesor/servicios/crearservicio">Servicios</a></li>
+      <li *ngIf = "sesionIniciada"><a routerLink="/asesor/gestionar-solicitudes/contactenos">Contáctenos</a></li>
+      <li *ngIf = "sesionIniciada"><a routerLink="/asesor/gestionar-solicitudes/contactenos"><i class="material-icons prefix">shopping_cart</i></a></li>
+    </ul>
+    <a routerLink="/inicio" data-target="mobile-demo" class="sidenav-trigger" ><i class="material-icons">menu</i></a>
+    <div style="background: blue;">
+    <ul class="right hide-on-med-and-down" >
+      <li *ngIf = "!sesionIniciada"><a routerLink="/seguridad/registrarusuario">Registrese</a></li>
+      <li *ngIf = "!sesionIniciada"><a routerLink="/seguridad/identificar">Iniciar Sesión</a></li>
+      <li *ngIf = "sesionIniciada"><a routerLink="/seguridad/cerrarsesion">Cerrar Sesión</a></li>
+      <li *ngIf = "sesionIniciada"><a routerLink="/administracion/gestionconfiguracion"><i class="material-icons prefix">settings</i></a></li>
+    </ul>
+  </div>
+  </div>
+</nav>
+
+<ul class="sidenav" id="mobile-demo">
+      <li><a routerLink="/inicio">Inicio</a></li>
+      <li><a routerLink="/cliente/catalogo/verproductos">Tienda</a></li>
+      <li><a routerLink="/asesor/servicios/crearservicio">Servicios</a></li>
+      <li><a routerLink="/asesor/gestionar-solicitudes/contactenos">Contáctenos</a></li>
+      <li *ngIf = "!sesionIniciada"><a routerLink="/seguridad/registrarusuario">Registrese</a></li>
+      <li *ngIf = "!sesionIniciada"><a routerLink="/seguridad/identificar">Iniciar Sesión</a></li>
+      <li *ngIf = "sesionIniciada"><a routerLink="/seguridad/cerrarsesion">Cerrar Sesión</a></li>
+      <li *ngIf = "sesionIniciada"><a routerLink="/administracion/gestionconfiguracion"><i class="material-icons prefix">settings</i></a></li>
+</ul>  
+    <!-- Fin de la Barra de menú -->    

@@ -1,0 +1,91 @@
+<div class="body_2" style="background: aliceblue;">
+<div class="container" >
+    <h1>Contáctenos</h1>
+    <div class="row">
+        <div class="col-lg-8 mt-4 mt-lg-0 o_colored_level">
+            <p>
+                Contacta con nosotros si tienes alguna inquietud, queja o sugerencia, te lo agradecemos.</p>
+        </div>
+        <main>
+            <div class="card-panel">
+                <!--formulario-->
+                <form action="" class="formulario" id="formulario">
+                    <!--div nombre-->
+                    <div class="formulario_grupo" id="grupo_nombre">
+                        <label for="nombre" class="formulario_label">Nombres</label>
+                        <div class="formulario_grupo-input">
+                            <input type="text" class="formulario_input" name="nombre" id="nombre">
+                            <i class="formulario_validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario_input-error">Tu nombre tiene que ser de 4 a 20 digitos y solo puede
+                            contener letras</p>
+                    </div>
+                    <!--div apellido-->
+                    <div class="formulario_grupo" id="grupo_apellido">
+                        <label for="apellido" class="formulario_label">Apellidos</label>
+                        <div class="formulario_grupo-input">
+                            <input type="text" class="formulario_input" name="apellido" id="apellido">
+                            <i class="formulario_validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario_input-error">Tu nombre solo puede contener de 10 a 20 digitos incluido solo
+                            letras</p>
+                    </div>
+                    <!--div correo-->
+                    <div class="formulario_grupo" id="grupo_correo">
+                        <label for="correo" class="formulario_label">Correo Electrónico</label>
+                        <div class="formulario_grupo-input">
+                            <input type="email" class="formulario_input" name="correo" id="correo"
+                                placeholder="correo@correo.com">
+                            <i class="formulario_validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario_input-error">El correo solo puede contener letras, numeros, puntos, arroba,
+                            guiones y guion bajo.</p>
+                    </div>
+                    <!--div telefono-->
+                    <div class="formulario_grupo" id="grupo_telefono">
+                        <label for="telefono" class="formulario_label">Número de Telefono</label>
+                        <div class="formulario_grupo-input">
+                            <input type="text" class="formulario_input" name="telefono" id="telefono"
+                                placeholder="317594830_601-5436762">
+                            <i class="formulario_validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario_input-error">El telefono solo puede contener de 7 a 14 dígitos númericos.
+                        </p>
+                    </div>
+                    
+
+                    <!--div asunto-->
+                    <div class="card-panel">
+                        <div class="col s12" id="grupo_asunto">
+                            <label for="asunto" class="formulario_label">Asunto</label>
+                            <div class="formulario_grupo-input">
+                                <input type="textarea" class="formulario_input" name="asunto" id="asunto"
+                                    placeholder="Escribe tu asunto">
+                                <!-- <textarea class="formcontrol" id="mensaje"></textarea>-->
+                                <i class="formulario_validacion-estado fas fa-times-circle"></i>
+                            </div>
+                            <p class="formulario_input-error">Este espacio es obligatorio</p>
+                        </div>
+                    </div>
+                    <!-- ReCaptcha  -->
+            <br>
+            <form [formGroup]="fgValidador">
+                <ngx-recaptcha2 #captchaElem
+                [siteKey]="siteKey"
+                formControlName="recaptcha">
+                </ngx-recaptcha2>
+            </form>
+            <br>
+
+                    <!--div boton y mensaje de exito-->
+                    <div class="formulario_grupo formulario_grupo-btn-enviar">
+                        <button type="submit" class="formulario_btn">Enviar</button>
+                        <p class="formulario_mensaje-exito" id="formulario_mensaje-exito">Formulario enviado
+                            exitosamente</p>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+</div>
+    <!--*****************************************************************-->

@@ -1,0 +1,32 @@
+
+<div class="container">
+ 
+  <br>
+  <a routerLink="/administracion/crearpersonas" class="btn light-green darken-2">Nueva Persona</a>
+  <table class="table responsive">
+  <thead>
+    <tr>
+      <th>NOMBRE</th>
+      <th>APELLIDOS</th>
+      <th>DIRECCION</th>
+      <th>CELULAR</th>
+      <th>CORREO</th>
+      <th>EDICION</th>
+      <th>ELIMINACION</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor ="let p of ListaPersonas">
+      <td>{{p.nombres}}</td>
+      <td>{{p.apellidos}}</td>
+      <td>{{p.direccion}}</td>
+      <td>{{p.celular}}</td>
+      <td>{{p.correo}}</td>
+      <td><a routerLink="/administracion/editarpersonas/{{p.id}}" class="btn btn-primary">Editar</a></td>
+      <td><a routerLink="/administracion/eliminarpersonas/{{p.id}}" class="btn red lighten-1">Eliminar</a></td>
+    </tr>
+  </tbody>
+  
+  </table>
+  </div>
+

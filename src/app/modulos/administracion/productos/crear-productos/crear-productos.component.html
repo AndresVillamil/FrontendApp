@@ -1,0 +1,81 @@
+<div class="container">
+
+  <div class="container">
+    <form [formGroup]="fgValidador" (ngSubmit)="GuardarProducto()"> <!-- Change The Form Method From Here-->
+      <div class="card-panel z-depth-5">
+  
+          <!-- Form Logo Section  -->
+  
+          <div class="row margin">
+              <div class="col s12 m12 l12 center">
+                  <img src="https://www.mejorconweb.com/images/servicios/paginas-web.svg"
+                   alt="" class="responsive-img circle" style="width:100px;">
+                  <p>Crear Productos</p>
+              </div>
+          </div>
+  
+          <!-- Form Nombre Producto Input Section -->
+  
+          <div class="col s12 m12 l12">
+              <div class="input-field">
+                  <i class="material-icons prefix">redeem</i>
+                  <input formControlName = 'nombreProducto' type="text" name="nombreProducto" id="nombreProducto">
+                  <label for="nombreProducto" class="active">Nombre Producto</label>
+              </div>
+          </div>
+  
+          <div class="col s12 m12 l12">
+            <div class="input-field">
+                <i class="material-icons prefix">redeem</i>
+                <input formControlName = 'descripcionProducto' type="text" name="descripcionProducto" id="descripcionProducto">
+                <label for="descripcionProducto" class="active">Descriptción Producto</label>
+            </div>
+        </div>
+        
+        <div class="col s12 m12 l12">
+          <div class="input-field">
+              <i class="material-icons prefix">photo_camera</i>
+              <input formControlName = 'imagen' type="text" name="imagen" id="imagen">
+              <label for="imagen" class="active">Imagen Producto</label>
+          </div>
+      </div>
+
+      <div id="cuerpo_2" class="grid">
+          <div class="col s4 m4 l4">
+            <div class="input-field">
+                <i class="material-icons prefix">payment</i>
+                <input formControlName = 'precio' type="text" name="precio" id="precio">
+                <label for="precio" class="active">Precio Producto</label>
+            </div>
+        </div>
+  
+        <div class="col s4 m4 l4">
+            <div class="input-field">
+                <i class="material-icons prefix">payment</i>
+                <input formControlName = 'existencia' type="text" name="existencia" id="existencia">
+                <label for="existencia" class="active">Existencia</label>
+            </div>
+        </div>
+
+        <div class="col s4 m4 l4">
+          <div class="input-field">
+              <i class="material-icons prefix">payment</i>
+              <input formControlName = 'categoria' type="text" name="categoria" id="categoria">
+              <label for="categoria" class="active">Categoria</label>
+          </div>
+      </div>
+
+      </div>
+              <!-- Form Button Section  -->
+  
+          <div class="center">
+              <input [disabled]="!fgValidador.valid" type="submit" value="Crear" name="envio"
+              class="btn waves-effect waves-light "
+              style="width:100%; background-color: #2c1ef3;" >
+          </div>
+  
+  
+      </div>
+    </form>
+    </div>
+</div>

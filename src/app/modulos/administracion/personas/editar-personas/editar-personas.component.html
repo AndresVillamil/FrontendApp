@@ -1,0 +1,77 @@
+<div class="container">
+
+  <div class="container">
+    <form [formGroup]="fgValidador" (ngSubmit)="EditarPersona()"> <!-- Change The Form Method From Here-->
+      <div class="card-panel z-depth-5">
+    <!-- Form Logo Section  -->
+    
+    <div class="row margin">
+      <div class="col s12 m12 l12 center">
+          <img src="https://www.mejorconweb.com/images/servicios/paginas-web.svg"
+           alt="" class="responsive-img circle" style="width:100px;">
+          <p>Editar Personas</p>
+      </div>
+    </div>  
+    
+    <input  type="hidden" formControlName="id"/>
+    <div class="col s12 m12 l12">
+      <div class="input-field">
+          <i class="material-icons prefix">redeem</i>
+          <input formControlName = 'nombrePersona' type="text" name="nombrePersona" id="nombrePersona">
+          <label for="nombrePersona" class="active">Nombre Persona</label>
+      </div>
+  </div>
+  
+  <div class="col s12 m12 l12">
+    <div class="input-field">
+        <i class="material-icons prefix">redeem</i>
+        <input formControlName = 'apellidoPersona' type="text" name="apellidoPersona" id="apellidoPersona">
+        <label for="apellidoPersona" class="active">Apellido Persona</label>
+    </div>
+  </div>
+      
+  <div class="col s12 m12 l12">
+    <div class="input-field">
+        <i class="material-icons prefix">redeem</i>
+        <input formControlName = 'direccionPersona' type="text" name="direccionPersona" id="direccionPersona">
+        <label for="direccionPersona" class="active">Dirección Persona</label>
+    </div>
+  </div>
+  <div class="col s12 m12 l12">
+    <div class="input-field">
+        <i class="material-icons prefix">redeem</i>
+        <input formControlName = 'celularPersona' type="text" name="celularPersona" id="celularPersona">
+        <label for="celularPersona" class="active">Celular Persona</label>
+    </div>
+  </div>
+  <div class="col s12 m12 l12">
+    <div class="input-field">
+        <i class="material-icons prefix">redeem</i>
+        <input formControlName = 'correoPersona' type="text" name="correoPersona" id="correoPersona">
+        <label for="correoPersona" class="active">Correo Persona</label>
+    </div>
+  </div>    
+  
+  
+  <!-- Form Button Section  -->
+  
+  <div class="center">
+    <input [disabled]="!fgValidador.valid" type="submit" value="Editar" name="envio"
+    class="btn waves-effect waves-light "
+    style="width:100%; background-color: #2c1ef3;" >
+</div>
+
+
+</div>
+</form>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
