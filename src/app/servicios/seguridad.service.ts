@@ -7,11 +7,12 @@ import { ModeloIdentificar } from '../modelos/identificar.modelo';
   providedIn: 'root'
 })
 export class SeguridadService {
+  url ='https://backonapp.herokuapp.com/';
 //Revisar comportamiento de una varaible específica
 //Se inicializa en vacío y evalua la propiedad
 datosUsuarioEnSasion = new BehaviorSubject <ModeloIdentificar> (new ModeloIdentificar());
 
-  constructor(private http: HttpClient) { 
+  constructor(private http: HttpClient) {
     this.VerificarSesionActual();
 
   }
@@ -20,7 +21,7 @@ datosUsuarioEnSasion = new BehaviorSubject <ModeloIdentificar> (new ModeloIdenti
 
    //1. Identificar al usuario con el método post a la url del Backend - metodo identificarPersona
   Identificar(usuario:string, clave:string ):Observable<ModeloIdentificar>{
-    return this.http.post("http://localhost:3000/identificarUsuario",{
+    return this.http.post(`${this.url}/identificarUsuario`/*"http://localhost:3000/identificarUsuario"*/,{
       usuario:usuario,
       clave:clave
     },{
