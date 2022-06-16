@@ -9,7 +9,7 @@ import { SeguridadService } from './seguridad.service';
   providedIn: 'root'
 })
 export class PersonaService {
-
+  url ='http://localhost:3000';
   token:string="";
   constructor(private http:HttpClient,
     private servicioSeguridad: SeguridadService) {
@@ -17,17 +17,17 @@ export class PersonaService {
      }
 
   ObtenerRegistros():Observable<ModeloPersona[]>{
-    //return this.http.get<ModeloPersona[]>("http://localhost:3000/personas");    
-    return this.http.get<ModeloPersona[]>("http://localhost:3000/usuarios");    
+    //return this.http.get<ModeloPersona[]>("http://localhost:3000/personas");
+    return this.http.get<ModeloPersona[]>(`${this.url}/usuarios`/*"http://localhost:3000/usuarios"*/);
   }
 
   ConsultaPersonasPorId(id:string) : Observable<ModeloPersona>{
-    return this.http.get<ModeloPersona>(`http://localhost:3000/usuarios/${id}`);
+    return this.http.get<ModeloPersona>(`${this.url}/usuarios/${id}`/*`http://localhost:3000/usuarios/${id}` */);
   }
 
   CrearPersona(persona : ModeloPersona):Observable<ModeloPersona>{
     //return this.http.post("http://localhost:3000/personas",persona,{
-      return this.http.post<ModeloPersona>("http://localhost:3000/usuarios",persona,{
+      return this.http.post<ModeloPersona>(`${this.url}/usuarios`/*"http://localhost:3000/usuarios"*/,persona,{
       headers: new HttpHeaders({
         'Authorization':`Bearer ${this.token}`
       })
@@ -36,7 +36,7 @@ export class PersonaService {
 
   EditarPersona(persona : ModeloPersona):Observable<ModeloPersona>{
     //return this.http.put<ModeloPersona>("http://localhost:3000/personas",persona,{
-      return this.http.put<ModeloPersona>(`http://localhost:3000/usuarios/${persona.id}`,persona,{
+      return this.http.put<ModeloPersona>(`${this.url}/usuarios/${persona.id}`,persona,{
       headers: new HttpHeaders({
         'Authorization':`Bearer ${this.token}`
       })
@@ -45,7 +45,7 @@ export class PersonaService {
 
   EliminarPersona(id : string):Observable<any>{
     //return this.http.delete<ModeloPersona>("http://localhost:3000/personas",{
-      return this.http.delete<ModeloPersona>(`http://localhost:3000/usuarios/${id}`,{
+      return this.http.delete<ModeloPersona>(`${this.url}/usuarios/${id}`,{
       headers: new HttpHeaders({
         'Authorization':`Bearer ${this.token}`
       })
