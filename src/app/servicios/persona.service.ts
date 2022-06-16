@@ -9,7 +9,7 @@ import { SeguridadService } from './seguridad.service';
   providedIn: 'root'
 })
 export class PersonaService {
-  url ='http://localhost:3000';
+  url ='https://backonapp.herokuapp.com/';
   token:string="";
   constructor(private http:HttpClient,
     private servicioSeguridad: SeguridadService) {
